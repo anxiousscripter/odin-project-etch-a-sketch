@@ -62,8 +62,8 @@ main {
 	display: flex;
 	height: 100%;
 }
+
 .grid-cell {
-	border: 1px solid #af5daa;
 	flex: 1;
 }
 

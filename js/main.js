@@ -18,4 +18,11 @@ function createCells(rows, columns) {
 	}
 }
 
+sketchGrid.addEventListener('mouseover', (event) => {
+	if (event.target !== event.currentTarget) {
+		const gridCell = event.target;
+		gridCell.setAttribute('style', 'background-color: #af5daa;');
+	}
+});
+
 createCells(16, 16);
