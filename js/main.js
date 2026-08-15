@@ -1,12 +1,12 @@
 const wrapper = document.querySelector('.wrapper');
 const btnGridSize = document.querySelector('.btn-set-grid');
-const btnReset = document.querySelector('.btn-reset');
+const btnClearGrid = document.querySelector('.btn-clear-grid');
 
 const sketchGrid = document.createElement('div');
 sketchGrid.classList.add('sketch-grid');
 wrapper.appendChild(sketchGrid);
 
-function createCells(rows, columns) {
+function createCells(rows = 16, columns = 16) {
 	for (let i = 1; i <= rows; i++) {
 		const gridRow = document.createElement('div');
 		gridRow.classList.add('grid-row');
@@ -20,7 +20,7 @@ function createCells(rows, columns) {
 	}
 }
 
-function clearSketchPad() {}
+function clearGrid() {}
 
 sketchGrid.addEventListener('mouseover', (event) => {
 	if (event.target !== event.currentTarget) {
@@ -44,9 +44,14 @@ btnGridSize.addEventListener('click', () => {
 			);
 		} else {
 			loopState = false;
+			while (sketchGrid.firstChild) {
+				sketchGrid.removeChild(sketchGrid.firstChild);
+			}
 			createCells(userInput, userInput);
 		}
 	} while (loopState);
 });
 
-btnReset.addEventListener('click', () => {});
+btnClearGrid.addEventListener('click', clearGrid);
+
+createCells();
