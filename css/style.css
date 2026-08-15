@@ -13,6 +13,11 @@ body {
 	min-height: 100vh;
 }
 
+button {
+	font-family: inherit;
+	cursor: pointer;
+}
+
 header {
 	padding: 1rem;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
@@ -46,6 +51,40 @@ main {
 }
 .wrapper {
 	padding: 1rem;
+}
+
+.settings-row {
+	margin-bottom: 1rem;
+}
+
+.settings-row .btn {
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	border: 1px solid #111;
+	border-radius: 4px;
+}
+
+.btn-set-grid {
+	background-color: #111;
+	color: #fff;
+	transition: opacity 0.2s;
+}
+
+.btn-set-grid:hover {
+	opacity: 0.9;
+}
+
+.btn-reset {
+	background-color: #fff;
+	color: #111;
+	transition:
+		background-color 0.2s,
+		color 0.2s;
+}
+
+.btn-reset:hover {
+	background-color: #111;
+	color: #fff;
 }
 
 .sketch-grid {

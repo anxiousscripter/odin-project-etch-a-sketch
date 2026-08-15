@@ -1,4 +1,6 @@
 const wrapper = document.querySelector('.wrapper');
+const btnGridSize = document.querySelector('.btn-set-grid');
+const btnReset = document.querySelector('.btn-reset');
 
 const sketchGrid = document.createElement('div');
 sketchGrid.classList.add('sketch-grid');
@@ -18,6 +20,8 @@ function createCells(rows, columns) {
 	}
 }
 
+function clearSketchPad() {}
+
 sketchGrid.addEventListener('mouseover', (event) => {
 	if (event.target !== event.currentTarget) {
 		const gridCell = event.target;
@@ -25,4 +29,24 @@ sketchGrid.addEventListener('mouseover', (event) => {
 	}
 });
 
-createCells(16, 16);
+btnGridSize.addEventListener('click', () => {
+	let loopState = true;
+	do {
+		const userInput = Number(
+			prompt('What grid size do you want? Pick a number from 1 to 100.'),
+		);
+
+		if (isNaN(userInput)) {
+			alert("That won't work. The grid size needs to be a number.");
+		} else if (userInput < 0 || userInput > 100) {
+			alert(
+				"That won't work. The grid size has to be a number from 1 to 100.",
+			);
+		} else {
+			loopState = false;
+			createCells(userInput, userInput);
+		}
+	} while (loopState);
+});
+
+btnReset.addEventListener('click', () => {});
