@@ -38,7 +38,7 @@ btnGridSize.addEventListener('click', () => {
 
 		if (isNaN(userInput)) {
 			alert("That won't work. The grid size needs to be a number.");
-		} else if (userInput < 0 || userInput > 100) {
+		} else if (userInput <= 0 || userInput > 100) {
 			alert(
 				"That won't work. The grid size has to be a number from 1 to 100.",
 			);
