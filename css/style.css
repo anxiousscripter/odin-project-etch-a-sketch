@@ -54,7 +54,10 @@ main {
 }
 
 .settings-row {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
 }
 
 .settings-row .btn {
@@ -75,17 +78,21 @@ main {
 }
 
 .btn-clear-grid {
-	background-color: #fff;
-	color: #111;
+	cursor: not-allowed;
+	/* remember to uncomment below attributes for working button */
+	/* background-color: #fff; */
+	/* color: #111; */
+	background-color: dimgray;
+	color: lightgray;
 	transition:
 		background-color 0.2s,
 		color 0.2s;
 }
 
-.btn-clear-grid:hover {
+/* .btn-clear-grid:hover {
 	background-color: #111;
 	color: #fff;
-}
+} */
 
 .sketch-grid {
 	border: 2px solid #000;
